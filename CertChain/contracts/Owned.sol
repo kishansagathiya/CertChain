@@ -9,7 +9,7 @@ contract Owned {
       _;
     }
 
-    function Owned() public{
+    function Owned() public {
       owner = msg.sender;
     }
 

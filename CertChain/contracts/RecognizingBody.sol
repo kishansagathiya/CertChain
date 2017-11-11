@@ -14,7 +14,7 @@ contract RecognizingBody {
     modifier onlyRecognizingBody(){
         bool found;
         for (uint i = 0; i < listOfRecognizingBodies.length; ++i) {
-            if(listOfRecognizingBodies[i] == msg.sender){
+            if (listOfRecognizingBodies[i] == msg.sender) {
                 found = true;
                 break;
             }
@@ -27,11 +27,11 @@ contract RecognizingBody {
         listOfRecognizingBodies.push(msg.sender);
     }
     
-    function AddRecognizingBody(address newRecognizingBody) public onlyRecognizingBody {
+    function addRecognizingBody (address newRecognizingBody) public onlyRecognizingBody {
         listOfRecognizingBodies.push(newRecognizingBody);
     }
     
-    function AddUniversity(
+    function addUniversity (
         address addressOfUniversity,
         string name
         ) public onlyRecognizingBody returns(University university)
