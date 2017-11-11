@@ -1,0 +1,1407 @@
+{
+  "contractName": "University",
+  "abi": [
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "name",
+      "outputs": [
+        {
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_addressOfAwardee",
+          "type": "address"
+        },
+        {
+          "name": "_nameOfAwardee",
+          "type": "string"
+        },
+        {
+          "name": "_addressOfUniversity",
+          "type": "address"
+        },
+        {
+          "name": "_nameOfUniversity",
+          "type": "string"
+        },
+        {
+          "name": "_nameOfTheDegree",
+          "type": "string"
+        },
+        {
+          "name": "_grades",
+          "type": "string"
+        }
+      ],
+      "name": "AddCertificate",
+      "outputs": [
+        {
+          "name": "certificate",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "owner",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "recognizingBody",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "name": "_recognizingBody",
+          "type": "address"
+        },
+        {
+          "name": "_owner",
+          "type": "address"
+        },
+        {
+          "name": "_name",
+          "type": "string"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "name": "_addressOfAwardee",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "name": "_nameOfAwardee",
+          "type": "string"
+        },
+        {
+          "indexed": false,
+          "name": "_addressOfUniversity",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "name": "_nameOfUniversity",
+          "type": "string"
+        },
+        {
+          "indexed": false,
+          "name": "_nameOfTheDegree",
+          "type": "string"
+        },
+        {
+          "indexed": false,
+          "name": "_grades",
+          "type": "string"
+        },
+        {
+          "indexed": false,
+          "name": "_owner",
+          "type": "address"
+        }
+      ],
+      "name": "CertificateAddedLog",
+      "type": "event"
+    }
+  ],
+  "bytecode": "0x6060604052341561000f57600080fd5b604051610e61380380610e618339810160405280805190602001909190805190602001909190805182019190505082600160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550816000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555080600290805190602001906100d49291906100dd565b50505050610182565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f1061011e57805160ff191683800117855561014c565b8280016001018555821561014c579182015b8281111561014b578251825591602001919060010190610130565b5b509050610159919061015d565b5090565b61017f91905b8082111561017b576000816000905550600101610163565b5090565b90565b610cd0806101916000396000f300606060405260043610610062576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806306fdde031461006757806362f332e7146100f55780638da5cb5b14610299578063d6f3579a146102ee575b600080fd5b341561007257600080fd5b61007a610343565b6040518080602001828103825283818151815260200191508051906020019080838360005b838110156100ba57808201518184015260208101905061009f565b50505050905090810190601f1680156100e75780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b341561010057600080fd5b610257600480803573ffffffffffffffffffffffffffffffffffffffff1690602001909190803590602001908201803590602001908080601f0160208091040260200160405190810160405280939291908181526020018383808284378201915050505050509190803573ffffffffffffffffffffffffffffffffffffffff1690602001909190803590602001908201803590602001908080601f0160208091040260200160405190810160405280939291908181526020018383808284378201915050505050509190803590602001908201803590602001908080601f0160208091040260200160405190810160405280939291908181526020018383808284378201915050505050509190803590602001908201803590602001908080601f016020809104026020016040519081016040528093929190818152602001838380828437820191505050505050919050506103e1565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b34156102a457600080fd5b6102ac610921565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b34156102f957600080fd5b610301610946565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b60028054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156103d95780601f106103ae576101008083540402835291602001916103d9565b820191906000526020600020905b8154815290600101906020018083116103bc57829003601f168201915b505050505081565b60008686868686866000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1661041361096c565b808873ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001806020018773ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018060200180602001806020018673ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200185810385528b818151815260200191508051906020019080838360005b838110156104f25780820151818401526020810190506104d7565b50505050905090810190601f16801561051f5780820380516001836020036101000a031916815260200191505b50858103845289818151815260200191508051906020019080838360005b8381101561055857808201518184015260208101905061053d565b50505050905090810190601f1680156105855780820380516001836020036101000a031916815260200191505b50858103835288818151815260200191508051906020019080838360005b838110156105be5780820151818401526020810190506105a3565b50505050905090810190601f1680156105eb5780820380516001836020036101000a031916815260200191505b50858103825287818151815260200191508051906020019080838360005b83811015610624578082015181840152602081019050610609565b50505050905090810190601f1680156106515780820380516001836020036101000a031916815260200191505b509b505050505050505050505050604051809103906000f080151561067557600080fd5b90507f757f5a8b82fa7d905e974203b2b0d89a85bdd56f92cd4912a1cbaf286761ba278787878787876000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff16604051808873ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001806020018773ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018060200180602001806020018673ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200185810385528b818151815260200191508051906020019080838360005b838110156107a2578082015181840152602081019050610787565b50505050905090810190601f1680156107cf5780820380516001836020036101000a031916815260200191505b50858103845289818151815260200191508051906020019080838360005b838110156108085780820151818401526020810190506107ed565b50505050905090810190601f1680156108355780820380516001836020036101000a031916815260200191505b50858103835288818151815260200191508051906020019080838360005b8381101561086e578082015181840152602081019050610853565b50505050905090810190601f16801561089b5780820380516001836020036101000a031916815260200191505b50858103825287818151815260200191508051906020019080838360005b838110156108d45780820151818401526020810190506108b9565b50505050905090810190601f1680156109015780820380516001836020036101000a031916815260200191505b509b50505050505050505050505060405180910390a19695505050505050565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b6040516103288061097d8339019056006060604052341561000f57600080fd5b6040516103283803806103288339810160405280805190602001909190805182019190602001805190602001909190805182019190602001805182019190602001805182019190602001805190602001909190505086600160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555085600290805190602001906100bb92919061018e565b5084600360006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550836004908051906020019061011392919061018e565b50826005908051906020019061012a92919061018e565b50816006908051906020019061014192919061018e565b50806000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555050505050505050610233565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f106101cf57805160ff19168380011785556101fd565b828001600101855582156101fd579182015b828111156101fc5782518255916020019190600101906101e1565b5b50905061020a919061020e565b5090565b61023091905b8082111561022c576000816000905550600101610214565b5090565b90565b60e7806102416000396000f300606060405260043610603f576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680638da5cb5b146044575b600080fd5b3415604e57600080fd5b60546096565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff16815600a165627a7a72305820167b361d29b0525df878c366d864e9d0bc8d1565cd8c6bfd0c1d9f0df5ffb9230029a165627a7a7230582020752b774c00c45ecc9248d4a27655288971494d8dfb345e25a72c3e0ca2d2f00029",
+  "deployedBytecode": "0x606060405260043610610062576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806306fdde031461006757806362f332e7146100f55780638da5cb5b14610299578063d6f3579a146102ee575b600080fd5b341561007257600080fd5b61007a610343565b6040518080602001828103825283818151815260200191508051906020019080838360005b838110156100ba57808201518184015260208101905061009f565b50505050905090810190601f1680156100e75780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b341561010057600080fd5b610257600480803573ffffffffffffffffffffffffffffffffffffffff1690602001909190803590602001908201803590602001908080601f0160208091040260200160405190810160405280939291908181526020018383808284378201915050505050509190803573ffffffffffffffffffffffffffffffffffffffff1690602001909190803590602001908201803590602001908080601f0160208091040260200160405190810160405280939291908181526020018383808284378201915050505050509190803590602001908201803590602001908080601f0160208091040260200160405190810160405280939291908181526020018383808284378201915050505050509190803590602001908201803590602001908080601f016020809104026020016040519081016040528093929190818152602001838380828437820191505050505050919050506103e1565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b34156102a457600080fd5b6102ac610921565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b34156102f957600080fd5b610301610946565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b60028054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156103d95780601f106103ae576101008083540402835291602001916103d9565b820191906000526020600020905b8154815290600101906020018083116103bc57829003601f168201915b505050505081565b60008686868686866000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1661041361096c565b808873ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001806020018773ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018060200180602001806020018673ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200185810385528b818151815260200191508051906020019080838360005b838110156104f25780820151818401526020810190506104d7565b50505050905090810190601f16801561051f5780820380516001836020036101000a031916815260200191505b50858103845289818151815260200191508051906020019080838360005b8381101561055857808201518184015260208101905061053d565b50505050905090810190601f1680156105855780820380516001836020036101000a031916815260200191505b50858103835288818151815260200191508051906020019080838360005b838110156105be5780820151818401526020810190506105a3565b50505050905090810190601f1680156105eb5780820380516001836020036101000a031916815260200191505b50858103825287818151815260200191508051906020019080838360005b83811015610624578082015181840152602081019050610609565b50505050905090810190601f1680156106515780820380516001836020036101000a031916815260200191505b509b505050505050505050505050604051809103906000f080151561067557600080fd5b90507f757f5a8b82fa7d905e974203b2b0d89a85bdd56f92cd4912a1cbaf286761ba278787878787876000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff16604051808873ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001806020018773ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018060200180602001806020018673ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200185810385528b818151815260200191508051906020019080838360005b838110156107a2578082015181840152602081019050610787565b50505050905090810190601f1680156107cf5780820380516001836020036101000a031916815260200191505b50858103845289818151815260200191508051906020019080838360005b838110156108085780820151818401526020810190506107ed565b50505050905090810190601f1680156108355780820380516001836020036101000a031916815260200191505b50858103835288818151815260200191508051906020019080838360005b8381101561086e578082015181840152602081019050610853565b50505050905090810190601f16801561089b5780820380516001836020036101000a031916815260200191505b50858103825287818151815260200191508051906020019080838360005b838110156108d45780820151818401526020810190506108b9565b50505050905090810190601f1680156109015780820380516001836020036101000a031916815260200191505b509b50505050505050505050505060405180910390a19695505050505050565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b6040516103288061097d8339019056006060604052341561000f57600080fd5b6040516103283803806103288339810160405280805190602001909190805182019190602001805190602001909190805182019190602001805182019190602001805182019190602001805190602001909190505086600160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555085600290805190602001906100bb92919061018e565b5084600360006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550836004908051906020019061011392919061018e565b50826005908051906020019061012a92919061018e565b50816006908051906020019061014192919061018e565b50806000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555050505050505050610233565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f106101cf57805160ff19168380011785556101fd565b828001600101855582156101fd579182015b828111156101fc5782518255916020019190600101906101e1565b5b50905061020a919061020e565b5090565b61023091905b8082111561022c576000816000905550600101610214565b5090565b90565b60e7806102416000396000f300606060405260043610603f576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680638da5cb5b146044575b600080fd5b3415604e57600080fd5b60546096565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff16815600a165627a7a72305820167b361d29b0525df878c366d864e9d0bc8d1565cd8c6bfd0c1d9f0df5ffb9230029a165627a7a7230582020752b774c00c45ecc9248d4a27655288971494d8dfb345e25a72c3e0ca2d2f00029",
+  "sourceMap": "77:1325:3:-;;;450:180;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;561:16;543:15;;:34;;;;;;;;;;;;;;;;;;595:6;587:5;;:14;;;;;;;;;;;;;;;;;;618:5;611:4;:12;;;;;;;;;;;;:::i;:::-;;450:180;;;77:1325;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;:::-;;;;;;;",
+  "deployedSourceMap": "77:1325:3:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;165:18;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:2;8:100;;;99:1;94:3;90;84:5;80:1;75:3;71;64:6;52:2;49:1;45:3;40:15;;8:100;;;12:14;3:109;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;640:755:3;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;103:20;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;129:30;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;165:18;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;640:755::-;884:23;970:17;1001:14;1030:20;1065:17;1096:16;1127:7;1149:5;;;;;;;;;;;941:214;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:2;8:100;;;99:1;94:3;90;84:5;80:1;75:3;71;64:6;52:2;49:1;45:3;40:15;;8:100;;;12:14;3:109;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1;8:100;33:3;30:1;27:2;8:100;;;99:1;94:3;90;84:5;80:1;75:3;71;64:6;52:2;49:1;45:3;40:15;;8:100;;;12:14;3:109;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1;8:100;33:3;30:1;27:2;8:100;;;99:1;94:3;90;84:5;80:1;75:3;71;64:6;52:2;49:1;45:3;40:15;;8:100;;;12:14;3:109;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1;8:100;33:3;30:1;27:2;8:100;;;99:1;94:3;90;84:5;80:1;75:3;71;64:6;52:2;49:1;45:3;40:15;;8:100;;;12:14;3:109;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;927:228:3;;1166:218;1199:17;1230:14;1259:20;1294:17;1325:16;1356:7;1378:5;;;;;;;;;;;1166:218;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:2;8:100;;;99:1;94:3;90;84:5;80:1;75:3;71;64:6;52:2;49:1;45:3;40:15;;8:100;;;12:14;3:109;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1;8:100;33:3;30:1;27:2;8:100;;;99:1;94:3;90;84:5;80:1;75:3;71;64:6;52:2;49:1;45:3;40:15;;8:100;;;12:14;3:109;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1;8:100;33:3;30:1;27:2;8:100;;;99:1;94:3;90;84:5;80:1;75:3;71;64:6;52:2;49:1;45:3;40:15;;8:100;;;12:14;3:109;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1;8:100;33:3;30:1;27:2;8:100;;;99:1;94:3;90;84:5;80:1;75:3;71;64:6;52:2;49:1;45:3;40:15;;8:100;;;12:14;3:109;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;640:755:3;;;;;;;;:::o;103:20::-;;;;;;;;;;;;;:::o;129:30::-;;;;;;;;;;;;;:::o;77:1325::-;;;;;;;;;;:::o",
+  "source": "pragma solidity ^0.4.15;\n\nimport \"./Certificate.sol\";\nimport \"./Owned.sol\";\n\ncontract University {\n    address public owner;\n    address public recognizingBody;\n    string public name;\n    event CertificateAddedLog(\n        address _addressOfAwardee,\n        string _nameOfAwardee,\n        address _addressOfUniversity,\n        string _nameOfUniversity,\n        string _nameOfTheDegree,\n        string _grades,\n        address _owner\n        );\n\n    function University(address _recognizingBody, address _owner, string _name) public {\n        recognizingBody = _recognizingBody;\n        owner = _owner;\n        name = _name;\n    }\n    \n    function AddCertificate(\n        address _addressOfAwardee,\n        string _nameOfAwardee,\n        address _addressOfUniversity,\n        string _nameOfUniversity,\n        string _nameOfTheDegree,\n        string _grades\n        ) public returns(Certificate certificate)\n        {\n        certificate = new Certificate(\n            _addressOfAwardee,\n            _nameOfAwardee, \n            _addressOfUniversity, \n            _nameOfUniversity,\n            _nameOfTheDegree, \n            _grades, \n            owner);\n\n        CertificateAddedLog(\n            _addressOfAwardee,\n            _nameOfAwardee, \n            _addressOfUniversity, \n            _nameOfUniversity,\n            _nameOfTheDegree, \n            _grades, \n            owner);    \n    }\n    \n}\n\n",
+  "sourcePath": "/home/kishan/CertChain/CertChain/contracts/University.sol",
+  "ast": {
+    "attributes": {
+      "absolutePath": "/home/kishan/CertChain/CertChain/contracts/University.sol",
+      "exportedSymbols": {
+        "University": [
+          336
+        ]
+      }
+    },
+    "children": [
+      {
+        "attributes": {
+          "literals": [
+            "solidity",
+            "^",
+            "0.4",
+            ".15"
+          ]
+        },
+        "id": 248,
+        "name": "PragmaDirective",
+        "src": "0:24:3"
+      },
+      {
+        "attributes": {
+          "SourceUnit": 64,
+          "absolutePath": "/home/kishan/CertChain/CertChain/contracts/Certificate.sol",
+          "file": "./Certificate.sol",
+          "scope": 337,
+          "symbolAliases": [
+            null
+          ],
+          "unitAlias": ""
+        },
+        "id": 249,
+        "name": "ImportDirective",
+        "src": "26:27:3"
+      },
+      {
+        "attributes": {
+          "SourceUnit": 140,
+          "absolutePath": "/home/kishan/CertChain/CertChain/contracts/Owned.sol",
+          "file": "./Owned.sol",
+          "scope": 337,
+          "symbolAliases": [
+            null
+          ],
+          "unitAlias": ""
+        },
+        "id": 250,
+        "name": "ImportDirective",
+        "src": "54:21:3"
+      },
+      {
+        "attributes": {
+          "baseContracts": [
+            null
+          ],
+          "contractDependencies": [
+            63
+          ],
+          "contractKind": "contract",
+          "documentation": null,
+          "fullyImplemented": true,
+          "linearizedBaseContracts": [
+            336
+          ],
+          "name": "University",
+          "scope": 337
+        },
+        "children": [
+          {
+            "attributes": {
+              "constant": false,
+              "name": "owner",
+              "scope": 336,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "address",
+              "value": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "name": "address",
+                  "type": "address"
+                },
+                "id": 251,
+                "name": "ElementaryTypeName",
+                "src": "103:7:3"
+              }
+            ],
+            "id": 252,
+            "name": "VariableDeclaration",
+            "src": "103:20:3"
+          },
+          {
+            "attributes": {
+              "constant": false,
+              "name": "recognizingBody",
+              "scope": 336,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "address",
+              "value": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "name": "address",
+                  "type": "address"
+                },
+                "id": 253,
+                "name": "ElementaryTypeName",
+                "src": "129:7:3"
+              }
+            ],
+            "id": 254,
+            "name": "VariableDeclaration",
+            "src": "129:30:3"
+          },
+          {
+            "attributes": {
+              "constant": false,
+              "name": "name",
+              "scope": 336,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "string storage ref",
+              "value": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "name": "string",
+                  "type": "string storage pointer"
+                },
+                "id": 255,
+                "name": "ElementaryTypeName",
+                "src": "165:6:3"
+              }
+            ],
+            "id": 256,
+            "name": "VariableDeclaration",
+            "src": "165:18:3"
+          },
+          {
+            "attributes": {
+              "anonymous": false,
+              "name": "CertificateAddedLog"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "indexed": false,
+                      "name": "_addressOfAwardee",
+                      "scope": 272,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "type": "address"
+                        },
+                        "id": 257,
+                        "name": "ElementaryTypeName",
+                        "src": "224:7:3"
+                      }
+                    ],
+                    "id": 258,
+                    "name": "VariableDeclaration",
+                    "src": "224:25:3"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "indexed": false,
+                      "name": "_nameOfAwardee",
+                      "scope": 272,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "string memory",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "string",
+                          "type": "string storage pointer"
+                        },
+                        "id": 259,
+                        "name": "ElementaryTypeName",
+                        "src": "259:6:3"
+                      }
+                    ],
+                    "id": 260,
+                    "name": "VariableDeclaration",
+                    "src": "259:21:3"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "indexed": false,
+                      "name": "_addressOfUniversity",
+                      "scope": 272,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "type": "address"
+                        },
+                        "id": 261,
+                        "name": "ElementaryTypeName",
+                        "src": "290:7:3"
+                      }
+                    ],
+                    "id": 262,
+                    "name": "VariableDeclaration",
+                    "src": "290:28:3"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "indexed": false,
+                      "name": "_nameOfUniversity",
+                      "scope": 272,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "string memory",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "string",
+                          "type": "string storage pointer"
+                        },
+                        "id": 263,
+                        "name": "ElementaryTypeName",
+                        "src": "328:6:3"
+                      }
+                    ],
+                    "id": 264,
+                    "name": "VariableDeclaration",
+                    "src": "328:24:3"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "indexed": false,
+                      "name": "_nameOfTheDegree",
+                      "scope": 272,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "string memory",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "string",
+                          "type": "string storage pointer"
+                        },
+                        "id": 265,
+                        "name": "ElementaryTypeName",
+                        "src": "362:6:3"
+                      }
+                    ],
+                    "id": 266,
+                    "name": "VariableDeclaration",
+                    "src": "362:23:3"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "indexed": false,
+                      "name": "_grades",
+                      "scope": 272,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "string memory",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "string",
+                          "type": "string storage pointer"
+                        },
+                        "id": 267,
+                        "name": "ElementaryTypeName",
+                        "src": "395:6:3"
+                      }
+                    ],
+                    "id": 268,
+                    "name": "VariableDeclaration",
+                    "src": "395:14:3"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "indexed": false,
+                      "name": "_owner",
+                      "scope": 272,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "type": "address"
+                        },
+                        "id": 269,
+                        "name": "ElementaryTypeName",
+                        "src": "419:7:3"
+                      }
+                    ],
+                    "id": 270,
+                    "name": "VariableDeclaration",
+                    "src": "419:14:3"
+                  }
+                ],
+                "id": 271,
+                "name": "ParameterList",
+                "src": "214:229:3"
+              }
+            ],
+            "id": 272,
+            "name": "EventDefinition",
+            "src": "189:255:3"
+          },
+          {
+            "attributes": {
+              "constant": false,
+              "implemented": true,
+              "isConstructor": true,
+              "modifiers": [
+                null
+              ],
+              "name": "University",
+              "payable": false,
+              "scope": 336,
+              "stateMutability": "nonpayable",
+              "superFunction": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "_recognizingBody",
+                      "scope": 294,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "type": "address"
+                        },
+                        "id": 273,
+                        "name": "ElementaryTypeName",
+                        "src": "470:7:3"
+                      }
+                    ],
+                    "id": 274,
+                    "name": "VariableDeclaration",
+                    "src": "470:24:3"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "_owner",
+                      "scope": 294,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "type": "address"
+                        },
+                        "id": 275,
+                        "name": "ElementaryTypeName",
+                        "src": "496:7:3"
+                      }
+                    ],
+                    "id": 276,
+                    "name": "VariableDeclaration",
+                    "src": "496:14:3"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "_name",
+                      "scope": 294,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "string memory",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "string",
+                          "type": "string storage pointer"
+                        },
+                        "id": 277,
+                        "name": "ElementaryTypeName",
+                        "src": "512:6:3"
+                      }
+                    ],
+                    "id": 278,
+                    "name": "VariableDeclaration",
+                    "src": "512:12:3"
+                  }
+                ],
+                "id": 279,
+                "name": "ParameterList",
+                "src": "469:56:3"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 280,
+                "name": "ParameterList",
+                "src": "533:0:3"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "operator": "=",
+                          "type": "address"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 254,
+                              "type": "address",
+                              "value": "recognizingBody"
+                            },
+                            "id": 281,
+                            "name": "Identifier",
+                            "src": "543:15:3"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 274,
+                              "type": "address",
+                              "value": "_recognizingBody"
+                            },
+                            "id": 282,
+                            "name": "Identifier",
+                            "src": "561:16:3"
+                          }
+                        ],
+                        "id": 283,
+                        "name": "Assignment",
+                        "src": "543:34:3"
+                      }
+                    ],
+                    "id": 284,
+                    "name": "ExpressionStatement",
+                    "src": "543:34:3"
+                  },
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "operator": "=",
+                          "type": "address"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 252,
+                              "type": "address",
+                              "value": "owner"
+                            },
+                            "id": 285,
+                            "name": "Identifier",
+                            "src": "587:5:3"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 276,
+                              "type": "address",
+                              "value": "_owner"
+                            },
+                            "id": 286,
+                            "name": "Identifier",
+                            "src": "595:6:3"
+                          }
+                        ],
+                        "id": 287,
+                        "name": "Assignment",
+                        "src": "587:14:3"
+                      }
+                    ],
+                    "id": 288,
+                    "name": "ExpressionStatement",
+                    "src": "587:14:3"
+                  },
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "operator": "=",
+                          "type": "string storage ref"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 256,
+                              "type": "string storage ref",
+                              "value": "name"
+                            },
+                            "id": 289,
+                            "name": "Identifier",
+                            "src": "611:4:3"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 278,
+                              "type": "string memory",
+                              "value": "_name"
+                            },
+                            "id": 290,
+                            "name": "Identifier",
+                            "src": "618:5:3"
+                          }
+                        ],
+                        "id": 291,
+                        "name": "Assignment",
+                        "src": "611:12:3"
+                      }
+                    ],
+                    "id": 292,
+                    "name": "ExpressionStatement",
+                    "src": "611:12:3"
+                  }
+                ],
+                "id": 293,
+                "name": "Block",
+                "src": "533:97:3"
+              }
+            ],
+            "id": 294,
+            "name": "FunctionDefinition",
+            "src": "450:180:3"
+          },
+          {
+            "attributes": {
+              "constant": false,
+              "implemented": true,
+              "isConstructor": false,
+              "modifiers": [
+                null
+              ],
+              "name": "AddCertificate",
+              "payable": false,
+              "scope": 336,
+              "stateMutability": "nonpayable",
+              "superFunction": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "_addressOfAwardee",
+                      "scope": 335,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "type": "address"
+                        },
+                        "id": 295,
+                        "name": "ElementaryTypeName",
+                        "src": "673:7:3"
+                      }
+                    ],
+                    "id": 296,
+                    "name": "VariableDeclaration",
+                    "src": "673:25:3"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "_nameOfAwardee",
+                      "scope": 335,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "string memory",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "string",
+                          "type": "string storage pointer"
+                        },
+                        "id": 297,
+                        "name": "ElementaryTypeName",
+                        "src": "708:6:3"
+                      }
+                    ],
+                    "id": 298,
+                    "name": "VariableDeclaration",
+                    "src": "708:21:3"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "_addressOfUniversity",
+                      "scope": 335,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "type": "address"
+                        },
+                        "id": 299,
+                        "name": "ElementaryTypeName",
+                        "src": "739:7:3"
+                      }
+                    ],
+                    "id": 300,
+                    "name": "VariableDeclaration",
+                    "src": "739:28:3"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "_nameOfUniversity",
+                      "scope": 335,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "string memory",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "string",
+                          "type": "string storage pointer"
+                        },
+                        "id": 301,
+                        "name": "ElementaryTypeName",
+                        "src": "777:6:3"
+                      }
+                    ],
+                    "id": 302,
+                    "name": "VariableDeclaration",
+                    "src": "777:24:3"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "_nameOfTheDegree",
+                      "scope": 335,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "string memory",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "string",
+                          "type": "string storage pointer"
+                        },
+                        "id": 303,
+                        "name": "ElementaryTypeName",
+                        "src": "811:6:3"
+                      }
+                    ],
+                    "id": 304,
+                    "name": "VariableDeclaration",
+                    "src": "811:23:3"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "_grades",
+                      "scope": 335,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "string memory",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "string",
+                          "type": "string storage pointer"
+                        },
+                        "id": 305,
+                        "name": "ElementaryTypeName",
+                        "src": "844:6:3"
+                      }
+                    ],
+                    "id": 306,
+                    "name": "VariableDeclaration",
+                    "src": "844:14:3"
+                  }
+                ],
+                "id": 307,
+                "name": "ParameterList",
+                "src": "663:205:3"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "certificate",
+                      "scope": 335,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "contract Certificate",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "contractScope": null,
+                          "name": "Certificate",
+                          "referencedDeclaration": 63,
+                          "type": "contract Certificate"
+                        },
+                        "id": 308,
+                        "name": "UserDefinedTypeName",
+                        "src": "884:11:3"
+                      }
+                    ],
+                    "id": 309,
+                    "name": "VariableDeclaration",
+                    "src": "884:23:3"
+                  }
+                ],
+                "id": 310,
+                "name": "ParameterList",
+                "src": "883:25:3"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "operator": "=",
+                          "type": "contract Certificate"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 309,
+                              "type": "contract Certificate",
+                              "value": "certificate"
+                            },
+                            "id": 311,
+                            "name": "Identifier",
+                            "src": "927:11:3"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "isStructConstructorCall": false,
+                              "lValueRequested": false,
+                              "names": [
+                                null
+                              ],
+                              "type": "contract Certificate",
+                              "type_conversion": false
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": [
+                                    {
+                                      "typeIdentifier": "t_address",
+                                      "typeString": "address"
+                                    },
+                                    {
+                                      "typeIdentifier": "t_string_memory_ptr",
+                                      "typeString": "string memory"
+                                    },
+                                    {
+                                      "typeIdentifier": "t_address",
+                                      "typeString": "address"
+                                    },
+                                    {
+                                      "typeIdentifier": "t_string_memory_ptr",
+                                      "typeString": "string memory"
+                                    },
+                                    {
+                                      "typeIdentifier": "t_string_memory_ptr",
+                                      "typeString": "string memory"
+                                    },
+                                    {
+                                      "typeIdentifier": "t_string_memory_ptr",
+                                      "typeString": "string memory"
+                                    },
+                                    {
+                                      "typeIdentifier": "t_address",
+                                      "typeString": "address"
+                                    }
+                                  ],
+                                  "isConstant": false,
+                                  "isLValue": false,
+                                  "isPure": false,
+                                  "lValueRequested": false,
+                                  "type": "function (address,string memory,address,string memory,string memory,string memory,address) returns (contract Certificate)"
+                                },
+                                "children": [
+                                  {
+                                    "attributes": {
+                                      "contractScope": null,
+                                      "name": "Certificate",
+                                      "referencedDeclaration": 63,
+                                      "type": "contract Certificate"
+                                    },
+                                    "id": 312,
+                                    "name": "UserDefinedTypeName",
+                                    "src": "945:11:3"
+                                  }
+                                ],
+                                "id": 313,
+                                "name": "NewExpression",
+                                "src": "941:15:3"
+                              },
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 296,
+                                  "type": "address",
+                                  "value": "_addressOfAwardee"
+                                },
+                                "id": 314,
+                                "name": "Identifier",
+                                "src": "970:17:3"
+                              },
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 298,
+                                  "type": "string memory",
+                                  "value": "_nameOfAwardee"
+                                },
+                                "id": 315,
+                                "name": "Identifier",
+                                "src": "1001:14:3"
+                              },
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 300,
+                                  "type": "address",
+                                  "value": "_addressOfUniversity"
+                                },
+                                "id": 316,
+                                "name": "Identifier",
+                                "src": "1030:20:3"
+                              },
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 302,
+                                  "type": "string memory",
+                                  "value": "_nameOfUniversity"
+                                },
+                                "id": 317,
+                                "name": "Identifier",
+                                "src": "1065:17:3"
+                              },
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 304,
+                                  "type": "string memory",
+                                  "value": "_nameOfTheDegree"
+                                },
+                                "id": 318,
+                                "name": "Identifier",
+                                "src": "1096:16:3"
+                              },
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 306,
+                                  "type": "string memory",
+                                  "value": "_grades"
+                                },
+                                "id": 319,
+                                "name": "Identifier",
+                                "src": "1127:7:3"
+                              },
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 252,
+                                  "type": "address",
+                                  "value": "owner"
+                                },
+                                "id": 320,
+                                "name": "Identifier",
+                                "src": "1149:5:3"
+                              }
+                            ],
+                            "id": 321,
+                            "name": "FunctionCall",
+                            "src": "941:214:3"
+                          }
+                        ],
+                        "id": 322,
+                        "name": "Assignment",
+                        "src": "927:228:3"
+                      }
+                    ],
+                    "id": 323,
+                    "name": "ExpressionStatement",
+                    "src": "927:228:3"
+                  },
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "isStructConstructorCall": false,
+                          "lValueRequested": false,
+                          "names": [
+                            null
+                          ],
+                          "type": "tuple()",
+                          "type_conversion": false
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_address",
+                                  "typeString": "address"
+                                },
+                                {
+                                  "typeIdentifier": "t_string_memory_ptr",
+                                  "typeString": "string memory"
+                                },
+                                {
+                                  "typeIdentifier": "t_address",
+                                  "typeString": "address"
+                                },
+                                {
+                                  "typeIdentifier": "t_string_memory_ptr",
+                                  "typeString": "string memory"
+                                },
+                                {
+                                  "typeIdentifier": "t_string_memory_ptr",
+                                  "typeString": "string memory"
+                                },
+                                {
+                                  "typeIdentifier": "t_string_memory_ptr",
+                                  "typeString": "string memory"
+                                },
+                                {
+                                  "typeIdentifier": "t_address",
+                                  "typeString": "address"
+                                }
+                              ],
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 272,
+                              "type": "function (address,string memory,address,string memory,string memory,string memory,address)",
+                              "value": "CertificateAddedLog"
+                            },
+                            "id": 324,
+                            "name": "Identifier",
+                            "src": "1166:19:3"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 296,
+                              "type": "address",
+                              "value": "_addressOfAwardee"
+                            },
+                            "id": 325,
+                            "name": "Identifier",
+                            "src": "1199:17:3"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 298,
+                              "type": "string memory",
+                              "value": "_nameOfAwardee"
+                            },
+                            "id": 326,
+                            "name": "Identifier",
+                            "src": "1230:14:3"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 300,
+                              "type": "address",
+                              "value": "_addressOfUniversity"
+                            },
+                            "id": 327,
+                            "name": "Identifier",
+                            "src": "1259:20:3"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 302,
+                              "type": "string memory",
+                              "value": "_nameOfUniversity"
+                            },
+                            "id": 328,
+                            "name": "Identifier",
+                            "src": "1294:17:3"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 304,
+                              "type": "string memory",
+                              "value": "_nameOfTheDegree"
+                            },
+                            "id": 329,
+                            "name": "Identifier",
+                            "src": "1325:16:3"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 306,
+                              "type": "string memory",
+                              "value": "_grades"
+                            },
+                            "id": 330,
+                            "name": "Identifier",
+                            "src": "1356:7:3"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 252,
+                              "type": "address",
+                              "value": "owner"
+                            },
+                            "id": 331,
+                            "name": "Identifier",
+                            "src": "1378:5:3"
+                          }
+                        ],
+                        "id": 332,
+                        "name": "FunctionCall",
+                        "src": "1166:218:3"
+                      }
+                    ],
+                    "id": 333,
+                    "name": "ExpressionStatement",
+                    "src": "1166:218:3"
+                  }
+                ],
+                "id": 334,
+                "name": "Block",
+                "src": "917:478:3"
+              }
+            ],
+            "id": 335,
+            "name": "FunctionDefinition",
+            "src": "640:755:3"
+          }
+        ],
+        "id": 336,
+        "name": "ContractDefinition",
+        "src": "77:1325:3"
+      }
+    ],
+    "id": 337,
+    "name": "SourceUnit",
+    "src": "0:1404:3"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.4.18+commit.9cf6e910.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "1.0.1",
+  "updatedAt": "2017-11-11T10:27:45.552Z"
+}

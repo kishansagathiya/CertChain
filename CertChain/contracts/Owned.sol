@@ -9,7 +9,7 @@ contract Owned {
       _;
     }
 
-    function Owned() {
+    function Owned() public{
       owner = msg.sender;
     }
 
@@ -22,7 +22,7 @@ contract Owned {
      * @return Whether the action was successful.
      * Emits LogOwnerSet.
      */
-    function setOwner(address newOwner) onlyOwner returns(bool success) {
+    function setOwner(address newOwner) public onlyOwner returns(bool success) {
       require(newOwner != 0);
       require(newOwner != owner);
       address prev = owner;
@@ -34,7 +34,7 @@ contract Owned {
     /**
      * @return The owner of this contract.
      */
-    function getOwner() constant returns(address) {
+    function getOwner() public constant returns(address) {
       return owner;
     }
 }
