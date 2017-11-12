@@ -10,6 +10,7 @@ contract RecognizingBody {
         address addressOfUniversity,
         string name
         );
+    event RecognizingBodyCreatedLog(string _message, address[] _listOfRecognizingBodies);
 
     modifier onlyRecognizingBody(){
         bool found;
@@ -25,6 +26,7 @@ contract RecognizingBody {
 
     function RecognizingBody() public {
         listOfRecognizingBodies.push(msg.sender);
+        RecognizingBodyCreatedLog("RecognizingBody Loaded", listOfRecognizingBodies);
     }
     
     function addRecognizingBody (address newRecognizingBody) public onlyRecognizingBody {
@@ -38,5 +40,9 @@ contract RecognizingBody {
         {
             university = new University(msg.sender, addressOfUniversity, name);
             UniversityAddedLog(msg.sender, addressOfUniversity, name);
+    }
+
+    function test() returns(string){
+        return "test function works";
     }
 }

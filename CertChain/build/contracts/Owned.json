@@ -264,7 +264,7 @@
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 373,
+                              "referencedDeclaration": 393,
                               "type": "function (bool) pure",
                               "value": "require"
                             },
@@ -305,7 +305,7 @@
                                       "overloadedDeclarations": [
                                         null
                                       ],
-                                      "referencedDeclaration": 370,
+                                      "referencedDeclaration": 390,
                                       "type": "msg",
                                       "value": "msg"
                                     },
@@ -447,7 +447,7 @@
                                   "overloadedDeclarations": [
                                     null
                                   ],
-                                  "referencedDeclaration": 370,
+                                  "referencedDeclaration": 390,
                                   "type": "msg",
                                   "value": "msg"
                                 },
@@ -615,7 +615,7 @@
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 373,
+                              "referencedDeclaration": 393,
                               "type": "function (bool) pure",
                               "value": "require"
                             },
@@ -712,7 +712,7 @@
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 373,
+                              "referencedDeclaration": 393,
                               "type": "function (bool) pure",
                               "value": "require"
                             },
@@ -1114,5 +1114,5 @@
     }
   },
   "schemaVersion": "1.0.1",
-  "updatedAt": "2017-11-11T16:32:32.084Z"
+  "updatedAt": "2017-11-12T05:44:55.822Z"
 }
