@@ -1,5 +1,5 @@
 # CertChain
-CertChain is university certificates on blockchain
+CertChain is university certificates on blockchain (Yet to finish frontend, It has just smart contracts and truffle installed so far)
 
 ## Stakeholders:-
 - Students i.e, John Doe, Jacob Brown, etc. 
